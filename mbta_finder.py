@@ -7,7 +7,7 @@ Full instructions are at:
 https://sites.google.com/site/sd15spring/home/project-toolbox/geocoding-and-web-apis
 """
 
-from urllib.request import urlopen
+import requests
 import json
 
 
@@ -24,7 +24,7 @@ def get_json(url):
     Given a properly formatted URL for a JSON web API request, return
     a Python JSON object containing the response to that request.
     """
-    pass
+    return requests.get(url).json()
 
 
 def get_lat_long(place_name):
