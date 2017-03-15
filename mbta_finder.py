@@ -40,7 +40,7 @@ def get_lat_long(place_name):
     return (lat, lng)
 
 
-def get_nearest_station(latitude, longitude):
+def get_nearest_station(latlong):
     """
     Given latitude and longitude strings, return a (station_name, distance)
     tuple for the nearest MBTA station to the given coordinates.
@@ -48,7 +48,10 @@ def get_nearest_station(latitude, longitude):
     See http://realtime.mbta.com/Portal/Home/Documents for URL
     formatting requirements for the 'stopsbylocation' API.
     """
-    pass
+    resp = get_json(MBTA_BASE_URL + "lat=" + str(latlong[0]) + "&lon=" + str(latlong[1]))
+    station_name = resp["stop"][0]["stop_name"]
+    dist = resp["stop"][0]["distance"]
+    return (station_name, dist)
 
 
 def find_stop_near(place_name):
