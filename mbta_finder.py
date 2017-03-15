@@ -9,6 +9,7 @@ https://sites.google.com/site/sd15spring/home/project-toolbox/geocoding-and-web-
 
 import requests
 import json
+import sys
 
 
 # Useful URLs (you need to add the appropriate parameters for your requests)
@@ -61,4 +62,5 @@ def find_stop_near(place_name):
     """
     return get_nearest_station(get_lat_long(place_name))
 
-find_stop_near("Fenway Park")
+if __name__ == '__main__':
+    print(find_stop_near(sys.argv[1]))
