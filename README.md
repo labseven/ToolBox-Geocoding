@@ -1,4 +1,7 @@
 # ToolBox-Geocoding
-Geocoding and Web APIs Project Toolbox starter code
+Adam's geocode toolbox
 
-Full instructions at [the course website](https://sd17spring.github.io/toolboxes/geocoding-and-web-apis/)
+```
+python3 mbta_finder.py "Boston aquarium"
+('Long Wharf, Boston', '0.0701024010777473')
+```
