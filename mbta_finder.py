@@ -33,7 +33,11 @@ def get_lat_long(place_name):
     See https://developers.google.com/maps/documentation/geocoding/
     for Google Maps Geocode API URL formatting requirements.
     """
-    pass
+
+    resp = get_json(GMAPS_BASE_URL + "?address=" + place_name)
+    lat = resp["results"][0]["geometry"]["location"]["lat"]
+    lng = resp["results"][0]["geometry"]["location"]["lng"]
+    return (lat, lng)
 
 
 def get_nearest_station(latitude, longitude):
