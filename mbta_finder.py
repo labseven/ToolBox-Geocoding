@@ -59,4 +59,6 @@ def find_stop_near(place_name):
     Given a place name or address, print the nearest MBTA stop and the
     distance from the given place to that stop.
     """
-    pass
+    return get_nearest_station(get_lat_long(place_name))
+
+find_stop_near("Fenway Park")
