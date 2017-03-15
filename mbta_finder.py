@@ -13,11 +13,9 @@ import json
 
 # Useful URLs (you need to add the appropriate parameters for your requests)
 GMAPS_BASE_URL = "https://maps.googleapis.com/maps/api/geocode/json"
-MBTA_BASE_URL = "http://realtime.mbta.com/developer/api/v2/stopsbylocation"
-MBTA_DEMO_API_KEY = "wX9NwuHnZU2ToO7GmGR9uw"
+MBTA_DEMO_API_KEY = "?api_key=wX9NwuHnZU2ToO7GmGR9uw&format=json&"
+MBTA_BASE_URL = "http://realtime.mbta.com/developer/api/v2/stopsbylocation" + MBTA_DEMO_API_KEY
 
-
-# A little bit of scaffolding if you want to use it
 
 def get_json(url):
     """
